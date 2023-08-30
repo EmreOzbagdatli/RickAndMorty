@@ -18,7 +18,8 @@ struct CharacterListView: View {
             return viewModel.characters
         } else {
             return viewModel.characters.filter {
-                $0.name.localizedCaseInsensitiveContains(searchTerm)
+                $0.name.localizedCaseInsensitiveContains(searchTerm) ||
+                $0.species.localizedCaseInsensitiveContains(searchTerm)
             }
         }
     }
